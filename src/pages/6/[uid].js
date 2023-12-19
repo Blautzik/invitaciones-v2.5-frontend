@@ -2,7 +2,7 @@ import { getFirestore, doc, getDoc, collection, getDocs } from 'firebase/firesto
 import Header from '@/components/6/Header';
 import Head from 'next/head';
 import { db } from '../../firebase/config';
-import Info from '@/components/6/Info';
+
 
 const seis = ({ article }) => {
     return (
@@ -11,7 +11,7 @@ const seis = ({ article }) => {
                 <title>
                     {article.nombre}
                 </title>
-                {/* Update image handling based on Firebase requirements */}
+
                 <meta property="og:image" content={article.fotoPortada} />
                 <meta property="og:description" content={article.nombre} />
             </Head>
@@ -19,14 +19,12 @@ const seis = ({ article }) => {
             <div className="mb-16">
                 <Header
                     title={article.nombre}
-                    // Update image handling based on Firebase requirements
                     coverImage={article.fotoPortada}
                     coverImagePc={article.fotoPortada}
                     date={article.fecha}
                     content={article.nombre}
                 />
             </div>
-
 
         </>
     );
