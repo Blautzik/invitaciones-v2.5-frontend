@@ -2,6 +2,7 @@ import { getFirestore, doc, getDoc, collection, getDocs } from 'firebase/firesto
 import Header from '@/components/6/Header';
 import Head from 'next/head';
 import { db } from '../../firebase/config';
+import Info from '@/components/6/Info';
 
 const seis = ({ article }) => {
     return (
@@ -25,6 +26,14 @@ const seis = ({ article }) => {
                     content={article.nombre}
                 />
             </div>
+            
+
+            <div id="info">
+                <Info article={article.data} />
+            </div>
+
+
+
         </>
     );
 };
