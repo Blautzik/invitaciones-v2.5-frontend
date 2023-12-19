@@ -26,12 +26,6 @@ const seis = ({ article }) => {
                     content={article.nombre}
                 />
             </div>
-            
-
-            <div id="info">
-                <Info article={article.data} />
-            </div>
-
 
 
         </>
