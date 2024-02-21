@@ -28,7 +28,7 @@ const Header = ({ coverImage, title, date, coverImagePc }) => {
               <Image
                 src={coverImage}
                 fill
-                quality={100}
+                quality={50}
                 style={imageStyle}
                 alt='portada'
               />
@@ -48,10 +48,11 @@ const Header = ({ coverImage, title, date, coverImagePc }) => {
       
               <div className='pt-20 relative z-10'>
                 <h1 className={`${minion.className} text-gray-50 max-w-sm text-center text-5xl font-[200]`}>{titulo}</h1>
+                <h2 className={`${minion.className} text-gray-50 max-w-sm text-center text-2xl font-[200]`}>MIS 15 AÑOS</h2>
               </div>
       
               <div className='flex flex-col items-center relative z-10'>
-                <h2 className={`${openSans.className} text-gray-50 max-w-xs text-center text-xl tracking-widest font-[100]`}>Nos casamos en</h2>
+                <h2 className={`${openSans.className} text-gray-50 max-w-xs text-center text-xl tracking-widest font-[100]`}>Faltan</h2>
                 <Countdown date={date} />
                 <Link href='#info' scroll={false}>
                   <button className={`${openSans.className} py-3 px-9 bg-white rounded-full text-gray-900 font-[900] text-center mb-16`}>MÁS INFO</button>

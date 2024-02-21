@@ -10,18 +10,22 @@ import { es } from "date-fns/locale";
 
 
 const Agendar = ({foto, links, fecha}) => {
-    const fechaCeremonia = new Date(fecha);
-    const formattedDate = format(fechaCeremonia, 'yyyy/MM/dd', { locale: es });
+    console.log(links)
+    const fechaCeremonia = new Date(fecha)
+    fechaCeremonia.setDate(fechaCeremonia.getDate() + 1);
+    const formattedDate = format(fechaCeremonia, 'yyyy/M/d', { locale: es });
+
+    console.log(formattedDate)
 
 
     return (
-        <div className='h-screen flex flex-col items-center justify-between'>
+        <div className='flex flex-col items-center justify-between'>
             <div className="flex flex-col items-center h-60 justify-between">
 
             <BiCalendar className="h-20 w-20 text-black mt-6 " />
 
             <h3 className={`${comfortaa.className} text-4xl text-center pb-4`}>Agregalo a tu calendario</h3>
-            <a className={`${openSans.className} bg-black text-white flex justify-evenly items-center md:w-72 w-68 text-[14px] font-[600] px-6 py-4 rounded-full `}
+            <a className={`${openSans.className} bg-black text-white flex justify-evenly items-center md:w-72 w-68 text-[14px] font-[600] px-6 py-2 mb-6 rounded-full `}
                 href={`https://calendar.google.com/calendar/u/0/r/week/${formattedDate}`}
                 target="_blank"
                 >
@@ -29,7 +33,7 @@ const Agendar = ({foto, links, fecha}) => {
                 AGENDAR
             </a>
                 </div>
-            <div className="shadow-2xl">
+            <div className="shadow-2xl mb-6">
                 {
                     foto &&
                     <Image
@@ -42,23 +46,23 @@ const Agendar = ({foto, links, fecha}) => {
                     />
                 }
             </div>
-            {
-                links &&    
+            
+               
                 <div className="md:w-96 w-10/12 flex items-center justify-evenly mb-">
+                {links[1] && 
                 <div className=" border-black text-black flex items-center border rounded-full h-16 w-16">
                     <RiFacebookLine className="text-xl m-auto" />
-                </div>
+                </div>}
+                {links[2]&&
                 <div className=" border-black text-black flex items-center border rounded-full h-16 w-16">
-
                     <RiTwitterLine className="text-xl m-auto"/>
-                </div>
+                </div>}
+                {links[0] &&
                 <div className=" border-black text-black flex items-center border rounded-full h-16 w-16 ">
-                    <RiInstagramLine className="text-xl m-auto"/>
-                </div>
+                     <RiInstagramLine className="text-xl m-auto"/>
+                </div>}
             </div>
-            }
-
-            <div className="w-screen bg-violeta h-8 text-center pt-2 text-white">Invitaciones Jano's </div>
+            
         </div>
     )
 }
